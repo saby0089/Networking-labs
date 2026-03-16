@@ -113,3 +113,9 @@ Test connectivity:
 ping between PCs
 
 All hosts successfully communicated across VLANs.
+
+---
+
+## Tools Used
+- Cisco Packet Tracer
+- CLI configuration
