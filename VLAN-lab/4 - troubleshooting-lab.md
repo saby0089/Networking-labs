@@ -44,6 +44,7 @@ The troubleshooting process followed a systematic approach:
 Diagnosis:
 - show run
 - show port-security address
+
 The outputs showed the secure MAC address was not the MAC address of connected PC1.
 
 Fix:
@@ -61,6 +62,7 @@ Diagnosis:
 - show run
 - show vlan brief
 - show interface f0/1 switchport
+
 The outputs showed the wrong VLAN is assigned on an access port and trunk port is misconfigured with access port.
 
 Fix:
@@ -76,6 +78,7 @@ Fix:
 
 Diagnosis:
 - show run
+
 The output shows the sub-interface was wrongly configured.
 
 Fix:
