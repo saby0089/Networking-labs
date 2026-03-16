@@ -2,7 +2,7 @@
 
 This lab demonstrates VLAN configuration, enabling port security and troubleshooting in a basic switched network.
 
-## Topics Covered
+## Concepts Covered
 - Device's hostname configuration
 - Enabling secret password for each networking device
 - VLAN creation
