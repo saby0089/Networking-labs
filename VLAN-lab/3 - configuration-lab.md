@@ -53,6 +53,7 @@ On both switches:
 - SW(config)# vlan 13
 - SW(config-vlan)# name VLAN13
 
+
 - SW(config)# vlan 24
 - SW(config-vlan)# name VLAN24
 
@@ -62,6 +63,7 @@ Example on SW1:
 - interface f0/2
 - switchport mode access
 - switchport access vlan 13
+
 
 - interface f0/3
 - switchport mode access
@@ -88,6 +90,7 @@ Then configure trunk:
 - interface g0/0.13
 - encapsulation dot1Q 13
 - ip address 10.0.0.1 255.255.255.0
+
 
 - interface g0/0.24
 - encapsulation dot1Q 24
