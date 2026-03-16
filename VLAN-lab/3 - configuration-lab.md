@@ -11,4 +11,4 @@ The topology consists of :
 - Each PC is connected to different switch ports
 
 ## Refer to the topology diagram below:
-![Network Topology](2-topology.png)
+![Network Topology](2 - topology.png)
