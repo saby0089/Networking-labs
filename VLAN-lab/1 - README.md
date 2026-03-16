@@ -14,7 +14,7 @@ This lab demonstrates VLAN configuration, enabling port security and troubleshoo
 - Troubleshooting VLAN connectivity
 
 ## Files in this Lab
-configuration-lab.md → Step-by-step configuration of VLANs, secrets, port-security
-troubleshooting-lab.md → Troubleshooting scenario and solution  
-topology.png → Network topology used for the lab
+- configuration-lab.md → Step-by-step configuration of VLANs, secrets, port-security
+- troubleshooting-lab.md → Troubleshooting scenario and solution  
+- topology.png → Network topology used for the lab
 
