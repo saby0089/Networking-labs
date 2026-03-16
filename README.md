@@ -1,4 +1,4 @@
-# Networking-labs
+# network-engineering-labs
 Hands-on networking labs covering VLANs, routing, troubleshooting, and security configurations.
 
 This repository contains my hands-on networking labs completed while preparing for the Cisco Certified Network Associate (CCNA).
