@@ -42,53 +42,63 @@ The troubleshooting process followed a systematic approach:
 - SW1's interface Fa0/2 was statically configured with a MAC address which is not the MAC address of the connected PC.
 
 Diagnosis:
-- show run
-- show port-security address
-
+```bash
+show run
+show port-security address
+```
 The outputs showed the secure MAC address was not the MAC address of connected PC1.
 
 Fix:
-- switchport access vlan 13
-- switchport mode access
-- switchport port-security
-- switchport port-security mac-address sticky 
-- switchport port-security violation restrict
+```bash
+switchport access vlan 13
+switchport mode access
+switchport port-security
+switchport port-security mac-address sticky 
+switchport port-security violation restrict
+```
 
 ### Issue 2 – Trunk Link Misconfiguration and assigning wrong VLAN information on access port
 - SW2 trunk link of Fa0/1 connected to SW1 was set to access port
 - Access port interface of Fa0/2 was set to wrong Vlan 23 instead of 13.
 
 Diagnosis:
-- show run
-- show vlan brief
-- show interface f0/1 switchport
-
+```bash
+show run
+show vlan brief
+show interface f0/1 switchport
+```
 The outputs showed the wrong VLAN is assigned on an access port and trunk port is misconfigured with access port.
 
 Fix:
-- interface FastEthernet0/1
-- switchport mode trunk
+```bash
+interface FastEthernet0/1
+switchport mode trunk
 !
-- interface FastEthernet0/2
-- switchport mode access
-- switchport access vlan 13
+interface FastEthernet0/2
+switchport mode access
+switchport access vlan 13
+```
 
 ### Issue 3 – Router Subinterface Configuration
 - Inter-VLAN configuration requires matching subnets and correct VLAN tagging in dot1Q encapsulation.
 
 Diagnosis:
-- show run
+```bash
+show run
+```
 
 The output shows the sub-interface was wrongly configured.
 
 Fix:
-- interface g0/0.13
-- encapsulation dot1Q 13
-- ip address 10.0.0.1 255.255.255.0
+```bash
+interface g0/0.13
+encapsulation dot1Q 13
+ip address 10.0.0.1 255.255.255.0
 
-- interface g0/0.24
-- encapsulation dot1Q 24
-- ip address 10.0.1.1 255.255.255.0
+interface g0/0.24
+encapsulation dot1Q 24
+ip address 10.0.1.1 255.255.255.0
+```
 
 ## Verification
 After correcting the misconfigurations, connectivity was verified.
