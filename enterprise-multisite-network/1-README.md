@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project simulates a real-world enterprise network with a Head Office (HQ) and a Branch Office connected over a WAN link.
+Designed and implemented a multi-site enterprise network with VLAN segmentation, OSPF routing, DHCP, NAT, and ACLs, simulating real-world HQ and branch connectivity.
 
 The network includes VLAN segmentation, inter-VLAN routing, dynamic routing using OSPF, DHCP for IP allocation, NAT for internet access, and ACL-based security.
 
