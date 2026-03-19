@@ -54,6 +54,13 @@ The network includes VLAN segmentation, inter-VLAN routing, dynamic routing usin
 
 ---
 
+## 🚀 Challenges Faced
+- NAT misconfiguration for branch network
+- Incorrect NAT placement on R2
+- Missing return path causing ICMP failure
+
+---
+
 ## 📂 Project Files
 
 * configuration.md → Full device configurations
