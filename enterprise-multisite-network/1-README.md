@@ -1,4 +1,4 @@
-# Enterprise Multi-Site Network Lab
+# Enterprise Multi-Site Network project
 
 ## Overview
 
