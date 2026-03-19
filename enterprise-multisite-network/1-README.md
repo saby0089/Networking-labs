@@ -1,6 +1,6 @@
 # Enterprise Multi-Site Network Lab
 
-## 📌 Overview
+## Overview
 
 This project simulates a real-world enterprise network with a Head Office (HQ) and a Branch Office connected over a WAN link.
 
