@@ -14,7 +14,6 @@
 
 ### 🔸 Interface Configuration
 
-```bash
 interface g0/0/0.10
 encapsulation dot1Q 10
 ip address 192.168.10.1 255.255.255.0
@@ -61,7 +60,6 @@ network 10.10.10.0 0.0.0.3 area 0
 
 ### 🔸 Interface Configuration
 
-```bash
 interface g0/0/0
 ip address 192.168.40.1 255.255.255.0
 
@@ -84,7 +82,6 @@ ip route 0.0.0.0 0.0.0.0 10.10.10.1
 
 ### 🔸 VLAN Setup
 
-```bash
 vlan 10
 name HR
 
