@@ -89,6 +89,8 @@ ip route 0.0.0.0 0.0.0.0 10.10.10.1
 
 ### 🔸 VLAN Setup
 
+Configuring VLANs on the switch to segment HR and IT networks.
+
 ```bash
 vlan 10
 name HR
@@ -99,6 +101,9 @@ name IT
 interface fa0/1
 switchport mode access
 switchport access vlan 10
+
+interface g0/1
+switchport mode trunk
 ```
 
 ### SW2 (Branch)
