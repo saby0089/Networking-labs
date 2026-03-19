@@ -102,6 +102,10 @@ interface fa0/1
 switchport mode access
 switchport access vlan 10
 
+interface fa0/3
+switchport mode access
+switchport access vlan 20
+
 interface g0/1
 switchport mode trunk
 ```
