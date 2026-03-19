@@ -40,74 +40,87 @@ VLAN24 → 10.0.1.1
 
 # Configuration Steps
 ## 1 Configure Hostnames
-- R1(config)# hostname R1
-- SW1(config)# hostname SW1
-- SW2(config)# hostname SW2
+
+```bash
+R1(config)# hostname R1
+SW1(config)# hostname SW1
+SW2(config)# hostname SW2
+```
 
 ## 2 Configure Enable Secret
-- enable secret SABY - Configured on all networking devices.
+```bash
+enable secret SABY - Configured on all networking devices.
+```
 
 ## 3 Create VLANs
+
 On both switches:
+```bash
+SW(config)# vlan 13
+SW(config-vlan)# name VLAN13
 
-- SW(config)# vlan 13
-- SW(config-vlan)# name VLAN13
-
-
-- SW(config)# vlan 24
-- SW(config-vlan)# name VLAN24
+SW(config)# vlan 24
+SW(config-vlan)# name VLAN24
+```
 
 ## 4 Configure Access Ports
 Example on SW1:
+```bash
+interface f0/2
+switchport mode access
+switchport access vlan 13
 
-- interface f0/2
-- switchport mode access
-- switchport access vlan 13
-
-
-- interface f0/3
-- switchport mode access
-- switchport access vlan 24
+interface f0/3
+switchport mode access
+switchport access vlan 24
+```
 
 ## 5 Configure Trunk Between SW1 and SW2
 First identify interfaces using CDP:
-
-- show cdp neighbors
-
+```bash
+show cdp neighbors
+```
 Then configure trunk:
-
-- interface f0/1
-- switchport mode trunk
+```bash
+interface f0/1
+switchport mode trunk
+```
 
 ## 6 Configure Port Security
-- interface f0/2
-- switchport mode access
-- switchport port-security
-- switchport port-security mac-address sticky
-- switchport port-security violation restrict
+```bash
+interface f0/2
+switchport mode access
+switchport port-security
+switchport port-security mac-address sticky
+switchport port-security violation restrict
+```
 
 ## 7 Configure Router-on-a-Stick
-- interface g0/0.13
-- encapsulation dot1Q 13
-- ip address 10.0.0.1 255.255.255.0
+```bash
+interface g0/0.13
+encapsulation dot1Q 13
+ip address 10.0.0.1 255.255.255.0
 
-
-- interface g0/0.24
-- encapsulation dot1Q 24
-- ip address 10.0.1.1 255.255.255.0
-
+interface g0/0.24
+encapsulation dot1Q 24
+ip address 10.0.1.1 255.255.255.0
+```
 ---
 
 ## 8 Verification
 
 Check VLANs:
+```bash
 show vlan brief
-
+```
 Check trunk:
+```bash
 show interfaces trunk
-
+```
 Check port security:
+```bash
 show port-security interface f0/2
+```
 
 Test connectivity:
 ping between PCs
