@@ -8,6 +8,17 @@ The lab simulates a multi-router environment where several misconfigurations wer
 
 ---
 
+## Skills Demonstrated
+- Network troubleshooting methodology
+- Root cause analysis
+- Cisco CLI configuration
+- Routing (RIP)
+- NAT/PAT configuration
+- DHCP and DNS troubleshooting
+- Secure remote access (SSH)
+
+---
+
 ## 🧠 Objectives
 
 * Identify and fix routing issues (RIP)
