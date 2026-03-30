@@ -39,7 +39,9 @@ It covers core networking concepts including:
 - Layer 2 & Layer 3 EtherChannel  
 - Wireless Network (Staff & Guest WiFi)  
 - WAN Connectivity using Serial Link  
-- Port Security Implementation  
+- Port Security Implementation
+
+---
 
 ## 🏗️ Network Architecture
 
