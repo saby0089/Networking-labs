@@ -1,5 +1,7 @@
 # 🏥 Enterprise Hospital Network Design (Cisco Packet Tracer)
 
+![Topology](topology.png)
+
 ## 📌 Project Overview
 
 This project demonstrates the design and implementation of a **highly available enterprise hospital network** using Cisco Packet Tracer.
