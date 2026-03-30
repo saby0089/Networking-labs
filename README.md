@@ -1,102 +1,120 @@
-# 🚀 Network Engineering Labs Portfolio
+# 👨‍💻 Sabyasachi Dasgupta – Networking Projects Portfolio
 
-## 📌 Overview
-
-This repository showcases my hands-on networking labs built while preparing for the Cisco Certified Network Associate (CCNA) certification.
-
-It demonstrates practical experience in configuring, troubleshooting, and verifying enterprise-level network scenarios using Cisco technologies.
+Welcome to my networking lab repository!
+This repository contains hands-on projects focused on **enterprise network design, routing, switching, and troubleshooting**.
 
 ---
 
-## 🧠 Key Highlights
+# 🚀 Featured Project (Flagship)
 
-* Designed and implemented multiple network topologies
-* Performed real-world troubleshooting across routing, DHCP, NAT, and security
-* Built and documented end-to-end network configurations
-* Gained hands-on experience with Cisco CLI and Packet Tracer
+## 🏥 Enterprise Hospital Network Design
 
----
+A complete enterprise-grade network implementing:
 
-## 🛠️ Technologies & Skills
-
-### 🔹 Networking Concepts
-
-* VLAN Configuration
+* 3-Tier Architecture (Core, Distribution, Access)
+* VLAN Segmentation
 * Inter-VLAN Routing
-* Static Routing
-* OSPF Routing
-* NAT / PAT
-* DHCP & DNS
+* OSPF Dynamic Routing
+* ECMP Load Balancing
+* Layer 2 & Layer 3 EtherChannel
+* Wireless Network (Staff & Guest WiFi)
+* WAN Connectivity (Serial ISP)
 * Port Security
+
+🔗 **View Project:**
+👉 https://github.com/saby0089/Networking-labs/tree/main/enterprise-network-hospital-design
+
+---
+
+# 📂 All Projects
+
+## 🔹 Core Networking Labs
+
+* VLAN Configuration Lab
+* Inter-VLAN Routing Lab
+* Trunking & Switching Lab
+
+---
+
+## 🔹 Routing Labs
+
+* OSPF Routing Lab
+* Static Routing Lab
+
+---
+
+## 🔹 Services & Infrastructure
+
+* DHCP Configuration Lab
+* DNS & Web Server Lab
+* NAT Configuration Lab
+
+---
+
+## 🔹 Wireless Networking
+
+* Wireless LAN Setup (AP + Clients)
+
+---
+
+## 🔹 Advanced Enterprise Project
+
+* 🏥 Enterprise Hospital Network Design (Flagship)
+
+---
+
+# 🧠 Skills Demonstrated
+
+* Network Design & Architecture
+* Routing Protocols (OSPF)
+* VLAN & Switching
+* Wireless Networking
+* WAN Technologies
+* Redundancy & High Availability
 * Network Troubleshooting
 
 ---
 
-### 🔹 Tools & Platforms
+# 🛠️ Tools Used
 
 * Cisco Packet Tracer
 * Cisco IOS CLI
 
 ---
 
-## 📂 Projects Included
+# 🎯 Learning Journey
 
-### 🔸 VLAN Lab
+This repository represents my journey from:
 
-* VLAN creation and port assignment
-* Inter-VLAN communication
-* Switch configuration and segmentation
-
----
-
-### 🔸 Enterprise Multi-Site Network
-
-* Multi-router topology
-* OSPF routing implementation
-* NAT configuration for internet access
-* End-to-end connectivity validation
+👉 Basic networking labs
+➡️ Advanced enterprise network design
 
 ---
 
-### 🔸 Network Troubleshooting Lab
+# 🔮 Future Enhancements
 
-* Identified and resolved multiple network issues including:
-
-  * RIP routing failure
-  * DHCP relay issue
-  * NAT/PAT misconfiguration
-  * Missing DNS configuration
-  * SSH access issue
+* Network security (ACL, DHCP Snooping)
+* Monitoring (SNMP, Syslog)
+* Automation basics
 
 ---
 
-## 🎯 Purpose
+# 📌 About Me
 
-To demonstrate strong foundational networking knowledge along with practical troubleshooting skills required for entry-level Network Engineer and NOC roles.
+I am actively building expertise in:
 
----
-
-## 📈 Career Focus
-
-Actively seeking opportunities in:
-
-* Network Engineering
-* Network Support / NOC Roles
-* IT Infrastructure Support
+* Enterprise Networking
+* Routing & Switching
+* Real-world troubleshooting
 
 ---
 
-## 🔗 GitHub Structure
+# ⭐ Support
 
-Each project includes:
-
-* Topology diagram
-* Configuration files
-* Troubleshooting documentation
-* Verification steps
+If you find this repository useful, please consider giving it a ⭐
 
 ---
 
-## 💡 Note
+# 🤝 Connect with Me
 
-All labs are built and tested independently, with detailed documentation to reflect real-world networking scenarios.
+* LinkedIn: https://www.linkedin.com/in/sabyasachi-dasgupta-655545243
