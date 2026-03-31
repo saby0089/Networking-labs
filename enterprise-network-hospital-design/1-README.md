@@ -12,8 +12,8 @@ It covers core networking concepts including:
 * Inter-VLAN Routing
 * OSPF Dynamic Routing
 * EtherChannel (L2 & L3)
-* HSRP (Distribution layer switches)
-* Port Address Translation(PAT) on internet edge router
+* HSRP (First Hop Redundancy Protocol) for gateway redundancy  
+* PAT (Port Address Translation) for internet access
 * ECMP Load Balancing
 * Wireless Networking
 * WAN Connectivity (Serial Link)
@@ -24,7 +24,7 @@ It covers core networking concepts including:
 ## 🖼️ Network Topology Explanation
 
 - Core Layer provides backbone connectivity  
-- Distribution Layer handles routing and policy  
+- Distribution Layer handles redundancy, routing and policy  
 - Access Layer connects end devices  
 - Wireless zone supports mobile connectivity  
 - Edge Router connects internal network to ISP
@@ -36,13 +36,14 @@ It covers core networking concepts including:
 - 3-Tier Enterprise Network Architecture  
 - VLAN Segmentation (7 VLANs)  
 - Inter-VLAN Routing using SVIs  
-- OSPF Dynamic Routing  
+- OSPF Dynamic Routing
+- Gateway redundancy using HSRP
 - ECMP Load Balancing  
 - Layer 2 & Layer 3 EtherChannel  
 - Wireless Network (Staff & Guest WiFi)  
 - WAN Connectivity using Serial Link  
 - Port Security Implementation
-
+- PAT implementation on internet edge router
 ---
 
 ## 🏗️ Network Architecture
@@ -148,6 +149,26 @@ Provides:
 
 ---
 
+### ✅ High Availability (HSRP)
+
+HSRP was configured on Distribution switches to provide a redundant default gateway.
+
+* Active/Standby configuration implemented  
+* Virtual IP used as default gateway for clients  
+* Ensures uninterrupted connectivity during failure  
+
+---
+
+### ✅ NAT / PAT Configuration
+
+PAT (Port Address Translation) was configured on the Edge Router:
+
+* Allows multiple internal devices to access the internet  
+* Uses a single public IP address  
+* Implements NAT overload  
+
+---
+
 ## 🌍 WAN Connectivity
 
 ### ✅ Edge Router
@@ -229,6 +250,7 @@ Commands used:
 show ip route
 show ip ospf neighbor
 show etherchannel summary
+show standby brief
 show spanning-tree
 show ip interface brief
 ```
