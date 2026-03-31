@@ -12,6 +12,8 @@ It covers core networking concepts including:
 * Inter-VLAN Routing
 * OSPF Dynamic Routing
 * EtherChannel (L2 & L3)
+* HSRP (Distribution layer switches)
+* Port Address Translation(PAT) on internet edge router
 * ECMP Load Balancing
 * Wireless Networking
 * WAN Connectivity (Serial Link)
@@ -264,11 +266,8 @@ This network design can be used in:
 
 ## 🔮 Future Improvements
 
-- Implement ACL for security  
-- Add NAT for internet access control  
 - Configure DHCP Snooping  
 - Add Network Monitoring (SNMP / Syslog)  
-- Implement HSRP for gateway redundancy
 ---
 
 ## 🚀 Conclusion
