@@ -96,6 +96,7 @@ standby 40 ip 10.40.40.1
 standby 40 priority 110
 standby 40 preempt
 ```
+Note: Standby router commands are not included
 
 ---
 
