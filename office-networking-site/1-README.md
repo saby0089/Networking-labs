@@ -1,7 +1,5 @@
 # 🌐 Saby's Enterprise Network Lab
 
-## 📷 Topology
-
 ![Topology](topology1.png)
 
 ## 📌 Overview
