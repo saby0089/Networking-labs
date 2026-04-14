@@ -185,7 +185,7 @@ This network is designed with redundancy at every critical layer:
 
 ## 📷 Topology
 
-![Topology](topology.png)
+
 
 ---
 
