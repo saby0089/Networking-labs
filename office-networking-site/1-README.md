@@ -1,5 +1,9 @@
 # 🌐 Saby's Enterprise Network Lab
 
+## 📷 Topology
+
+![Topology](topology1.png)
+
 ## 📌 Overview
 
 This project focuses on designing and implementing a **highly available and redundant multi-site enterprise network** using Cisco Packet Tracer. The topology simulates real-world enterprise requirements where **zero downtime, failover, and resilience** are the primary goals.
@@ -181,11 +185,6 @@ This network is designed with redundancy at every critical layer:
 * Monitoring (SNMP, Syslog)
 * STP optimization (root primary/secondary tuning)
 
----
-
-## 📷 Topology
-
-![Topology](topology1.png)
 
 ---
 
