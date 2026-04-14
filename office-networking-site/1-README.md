@@ -186,15 +186,13 @@ This network is designed with redundancy at every critical layer:
 
 ---
 
+## ⭐ Summary
+
+This project demonstrates a **highly resilient enterprise network design**, emphasizing redundancy, failover, and continuous service availability across multiple sites. It reflects real-world network engineering practices aligned with CCNA and CCNP-level concepts.
+
 ⭐ If you found this project useful, feel free to star the repo!
 
 ## 👨‍💻 Author
 
 **Sabyasachi Dasgupta**
-
----
-
-## ⭐ Summary
-
-This project demonstrates a **highly resilient enterprise network design**, emphasizing redundancy, failover, and continuous service availability across multiple sites. It reflects real-world network engineering practices aligned with CCNA and CCNP-level concepts.
 
