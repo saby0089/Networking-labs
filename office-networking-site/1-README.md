@@ -186,6 +186,8 @@ This network is designed with redundancy at every critical layer:
 
 ---
 
+⭐ If you found this project useful, feel free to star the repo!
+
 ## 👨‍💻 Author
 
 **Sabyasachi Dasgupta**
