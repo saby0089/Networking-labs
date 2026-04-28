@@ -1,1 +1,198 @@
 
+#############################################
+
+# DEVICE: HQ-EDGE
+
+# ROLE: Edge Router (Enterprise – HQ)
+
+# AS NUMBER: 65001
+
+#############################################
+
+# 📌 DESCRIPTION
+
+# This router connects HQ internal network to multiple ISPs.
+
+# It runs OSPF internally and BGP externally.
+
+# Responsible for:
+
+# - Route redistribution (BGP ↔ OSPF)
+
+# - Traffic engineering
+
+# - Route filtering
+
+# - Default route injection
+
+#############################################
+
+# 🔧 INTERFACE CONFIGURATION
+
+#############################################
+
+interface g0/0
+description Link to HQ-CORE
+ip address 10.1.1.1 255.255.255.252
+no shutdown
+
+interface g0/1
+description Link to ISP-1
+ip address 100.1.1.1 255.255.255.252
+no shutdown
+
+interface g0/2
+description Link to ISP-2
+ip address 100.1.2.1 255.255.255.252
+no shutdown
+
+interface g0/3
+description Link to ISP-3
+ip address 100.1.3.1 255.255.255.252
+no shutdown
+
+#############################################
+
+# 🔁 OSPF CONFIGURATION (IGP)
+
+#############################################
+
+router ospf 1
+router-id 1.1.1.2
+
+# Internal network
+
+network 10.1.1.0 0.0.0.3 area 0
+
+# Redistribute BGP routes into OSPF
+
+redistribute bgp 65001 subnets
+
+# Default route injection
+
+default-information originate
+
+#############################################
+
+# 🌐 BGP CONFIGURATION (EGP)
+
+#############################################
+
+router bgp 65001
+bgp log-neighbor-changes
+
+# eBGP neighbors (ISPs)
+
+neighbor 100.1.1.2 remote-as 65000
+neighbor 100.1.2.2 remote-as 65000
+neighbor 100.1.3.2 remote-as 65003
+
+# Advertise HQ LAN
+
+network 192.168.10.0 mask 255.255.255.0
+
+#############################################
+
+# 🎯 TRAFFIC ENGINEERING
+
+#############################################
+
+# Prefer ISP-1 (Primary Path)
+
+route-map PREF-ISP1 permit 10
+set local-preference 200
+
+router bgp 65001
+neighbor 100.1.1.2 route-map PREF-ISP1 in
+
+# ISP-3 as Backup (Lower Preference)
+
+route-map LOW-PREF permit 10
+set local-preference 50
+
+router bgp 65001
+neighbor 100.1.3.2 route-map LOW-PREF in
+
+#############################################
+
+# 🔁 AS PATH PREPENDING (INBOUND CONTROL)
+
+#############################################
+
+# De-prioritize ISP-2 path
+
+route-map PREPEND-ISP2 permit 10
+set as-path prepend 65001 65001 65001
+
+router bgp 65001
+neighbor 100.1.2.2 route-map PREPEND-ISP2 out
+
+#############################################
+
+# 🚫 ROUTE FILTERING (BGP)
+
+#############################################
+
+# Allow only HQ LAN to be advertised
+
+ip prefix-list LAN_ONLY seq 5 permit 192.168.10.0/24
+
+route-map FILTER-OUT permit 10
+match ip address prefix-list LAN_ONLY
+
+router bgp 65001
+neighbor 100.1.1.2 route-map FILTER-OUT out
+neighbor 100.1.2.2 route-map FILTER-OUT out
+neighbor 100.1.3.2 route-map FILTER-OUT out
+
+#############################################
+
+# 🔐 OPTIONAL: INBOUND FILTERING
+
+#############################################
+
+ip prefix-list REMOTE-LAN seq 5 permit 192.168.20.0/24
+
+route-map FILTER-IN permit 10
+match ip address prefix-list REMOTE-LAN
+
+router bgp 65001
+neighbor 100.1.1.2 route-map FILTER-IN in
+neighbor 100.1.2.2 route-map FILTER-IN in
+neighbor 100.1.3.2 route-map FILTER-IN in
+
+#############################################
+
+# 🔍 VERIFICATION COMMANDS
+
+#############################################
+
+# show ip bgp summary
+
+# show ip bgp
+
+# show ip route
+
+# show ip ospf neighbor
+
+# show ip bgp neighbors
+
+#############################################
+
+# ✅ NOTES
+
+#############################################
+
+# - OSPF used for internal routing
+
+# - BGP used for external routing
+
+# - Redistribution ensures end-to-end reachability
+
+# - Local Preference controls outbound traffic
+
+# - AS Path Prepending controls inbound traffic
+
+# - Route filtering prevents unnecessary route advertisement
+
+#############################################
