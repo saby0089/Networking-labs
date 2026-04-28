@@ -1,5 +1,7 @@
 # 🌐 Enterprise Multi-Homed Network using OSPF & BGP (GNS3 Lab)
 
+![Topology](topology.png)
+
 ## 📌 Overview
 
 This project demonstrates the design and implementation of a multi-site enterprise network connected to multiple ISPs using dynamic routing protocols.
