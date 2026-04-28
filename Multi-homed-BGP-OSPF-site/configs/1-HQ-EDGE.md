@@ -26,14 +26,14 @@ Function        :
 ---
 
 ### 2.1 Internal Link (HQ-CORE)
-
+```bash
 interface g0/0
 description Link to HQ-CORE
 ip address 10.1.1.1 255.255.255.252
 no shutdown
-
+```
 ### 2.2 External Links (ISPs)
-
+```bash
 interface g0/1
 description Link to ISP-1 (Primary)
 ip address 100.1.1.1 255.255.255.252
@@ -48,47 +48,47 @@ interface g0/3
 description Link to ISP-3 (Backup)
 ip address 100.1.3.1 255.255.255.252
 no shutdown
-
+```
 ---
 
 ## 3. IGP CONFIGURATION (OSPF)
 
 ---
-
+```bash
 router ospf 1
 router-id 1.1.1.2
-
+```
 # Internal network advertisement
-
+```bash
 network 10.1.1.0 0.0.0.3 area 0
-
+```
 # Inject external routes into OSPF
-
+```bash
 redistribute bgp 65001 subnets
-
+```
 # Inject default route into internal network
-
+```bash
 default-information originate
-
+```
 ---
 
 ## 4. EGP CONFIGURATION (BGP)
 
 ---
-
+```bash
 router bgp 65001
 bgp log-neighbor-changes
-
+```
 ### 4.1 eBGP Neighbors
-
+```bash
 neighbor 100.1.1.2 remote-as 65000   # ISP-1
 neighbor 100.1.2.2 remote-as 65000   # ISP-2
 neighbor 100.1.3.2 remote-as 65003   # ISP-3
-
+```
 ### 4.2 Network Advertisement
-
+```bash
 network 192.168.10.0 mask 255.255.255.0
-
+```
 ---
 
 ## 5. TRAFFIC ENGINEERING POLICIES
@@ -98,21 +98,21 @@ network 192.168.10.0 mask 255.255.255.0
 ### 5.1 Outbound Traffic Control (Local Preference)
 
 # Prefer ISP-1
-
+```bash
 route-map PREF-ISP1 permit 10
 set local-preference 200
 
 router bgp 65001
 neighbor 100.1.1.2 route-map PREF-ISP1 in
-
+```
 # Lower priority for ISP-3 (Backup)
-
+```bash
 route-map LOW-PREF permit 10
 set local-preference 50
 
 router bgp 65001
 neighbor 100.1.3.2 route-map LOW-PREF in
-
+```
 ---
 
 ## 6. INBOUND TRAFFIC CONTROL (AS PATH PREPENDING)
@@ -120,13 +120,13 @@ neighbor 100.1.3.2 route-map LOW-PREF in
 ---
 
 # De-prioritize ISP-2 path
-
+```bash
 route-map PREPEND-ISP2 permit 10
 set as-path prepend 65001 65001 65001
 
 router bgp 65001
 neighbor 100.1.2.2 route-map PREPEND-ISP2 out
-
+```
 ---
 
 ## 7. ROUTE FILTERING POLICIES
@@ -136,7 +136,7 @@ neighbor 100.1.2.2 route-map PREPEND-ISP2 out
 ### 7.1 Outbound Filtering
 
 # Advertise only HQ LAN network
-
+```bash
 ip prefix-list LAN_ONLY seq 5 permit 192.168.10.0/24
 
 route-map FILTER-OUT permit 10
@@ -146,13 +146,13 @@ router bgp 65001
 neighbor 100.1.1.2 route-map FILTER-OUT out
 neighbor 100.1.2.2 route-map FILTER-OUT out
 neighbor 100.1.3.2 route-map FILTER-OUT out
-
+```
 ---
 
 ### 7.2 Inbound Filtering
 
 # Accept only DR LAN network
-
+```bash
 ip prefix-list REMOTE-LAN seq 5 permit 192.168.20.0/24
 
 route-map FILTER-IN permit 10
@@ -162,19 +162,19 @@ router bgp 65001
 neighbor 100.1.1.2 route-map FILTER-IN in
 neighbor 100.1.2.2 route-map FILTER-IN in
 neighbor 100.1.3.2 route-map FILTER-IN in
-
+```
 ---
 
 ## 8. VERIFICATION COMMANDS
 
 ---
-
+```bash
 show ip bgp summary
 show ip bgp
 show ip route
 show ip ospf neighbor
 show ip bgp neighbors
-
+```
 ---
 
 ## 9. DESIGN NOTES
