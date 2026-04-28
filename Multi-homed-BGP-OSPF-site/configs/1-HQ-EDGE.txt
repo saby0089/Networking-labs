@@ -1,103 +1,103 @@
+############################################################
 
-#############################################
+# DEVICE DOCUMENTATION: HQ-EDGE
 
-# DEVICE: HQ-EDGE
+############################################################
 
-# ROLE: Edge Router (Enterprise – HQ)
+## 1. DEVICE OVERVIEW
 
-# AS NUMBER: 65001
+---
 
-#############################################
+Hostname        : HQ-EDGE
+Role            : Enterprise Edge Router (HQ Site)
+Autonomous System: 65001
+Function        :
 
-# 📌 DESCRIPTION
+* Connects HQ to multiple ISPs
+* Runs OSPF (IGP) internally
+* Runs BGP (EGP) externally
+* Performs route redistribution (BGP ↔ OSPF)
+* Implements traffic engineering policies
 
-# This router connects HQ internal network to multiple ISPs.
+---
 
-# It runs OSPF internally and BGP externally.
+## 2. INTERFACE CONFIGURATION
 
-# Responsible for:
+---
 
-# - Route redistribution (BGP ↔ OSPF)
-
-# - Traffic engineering
-
-# - Route filtering
-
-# - Default route injection
-
-#############################################
-
-# 🔧 INTERFACE CONFIGURATION
-
-#############################################
+### 2.1 Internal Link (HQ-CORE)
 
 interface g0/0
 description Link to HQ-CORE
 ip address 10.1.1.1 255.255.255.252
 no shutdown
 
+### 2.2 External Links (ISPs)
+
 interface g0/1
-description Link to ISP-1
+description Link to ISP-1 (Primary)
 ip address 100.1.1.1 255.255.255.252
 no shutdown
 
 interface g0/2
-description Link to ISP-2
+description Link to ISP-2 (Secondary)
 ip address 100.1.2.1 255.255.255.252
 no shutdown
 
 interface g0/3
-description Link to ISP-3
+description Link to ISP-3 (Backup)
 ip address 100.1.3.1 255.255.255.252
 no shutdown
 
-#############################################
+---
 
-# 🔁 OSPF CONFIGURATION (IGP)
+## 3. IGP CONFIGURATION (OSPF)
 
-#############################################
+---
 
 router ospf 1
 router-id 1.1.1.2
 
-# Internal network
+# Internal network advertisement
 
 network 10.1.1.0 0.0.0.3 area 0
 
-# Redistribute BGP routes into OSPF
+# Inject external routes into OSPF
 
 redistribute bgp 65001 subnets
 
-# Default route injection
+# Inject default route into internal network
 
 default-information originate
 
-#############################################
+---
 
-# 🌐 BGP CONFIGURATION (EGP)
+## 4. EGP CONFIGURATION (BGP)
 
-#############################################
+---
 
 router bgp 65001
 bgp log-neighbor-changes
 
-# eBGP neighbors (ISPs)
+### 4.1 eBGP Neighbors
 
-neighbor 100.1.1.2 remote-as 65000
-neighbor 100.1.2.2 remote-as 65000
-neighbor 100.1.3.2 remote-as 65003
+neighbor 100.1.1.2 remote-as 65000   # ISP-1
+neighbor 100.1.2.2 remote-as 65000   # ISP-2
+neighbor 100.1.3.2 remote-as 65003   # ISP-3
 
-# Advertise HQ LAN
+### 4.2 Network Advertisement
 
 network 192.168.10.0 mask 255.255.255.0
 
-#############################################
+---
 
-# 🎯 TRAFFIC ENGINEERING
+## 5. TRAFFIC ENGINEERING POLICIES
 
-#############################################
+---
 
-# Prefer ISP-1 (Primary Path)
+### 5.1 Outbound Traffic Control (Local Preference)
+
+# Prefer ISP-1
 
 route-map PREF-ISP1 permit 10
 set local-preference 200
@@ -105,7 +105,7 @@ set local-preference 200
 router bgp 65001
 neighbor 100.1.1.2 route-map PREF-ISP1 in
 
-# ISP-3 as Backup (Lower Preference)
+# Lower priority for ISP-3 (Backup)
 
 route-map LOW-PREF permit 10
 set local-preference 50
@@ -113,11 +113,11 @@ set local-preference 50
 router bgp 65001
 neighbor 100.1.3.2 route-map LOW-PREF in
 
-#############################################
+---
 
-# 🔁 AS PATH PREPENDING (INBOUND CONTROL)
+## 6. INBOUND TRAFFIC CONTROL (AS PATH PREPENDING)
 
-#############################################
+---
 
 # De-prioritize ISP-2 path
 
@@ -127,13 +127,15 @@ set as-path prepend 65001 65001 65001
 router bgp 65001
 neighbor 100.1.2.2 route-map PREPEND-ISP2 out
 
-#############################################
+---
 
-# 🚫 ROUTE FILTERING (BGP)
+## 7. ROUTE FILTERING POLICIES
 
-#############################################
+---
 
-# Allow only HQ LAN to be advertised
+### 7.1 Outbound Filtering
+
+# Advertise only HQ LAN network
 
 ip prefix-list LAN_ONLY seq 5 permit 192.168.10.0/24
 
@@ -145,11 +147,11 @@ neighbor 100.1.1.2 route-map FILTER-OUT out
 neighbor 100.1.2.2 route-map FILTER-OUT out
 neighbor 100.1.3.2 route-map FILTER-OUT out
 
-#############################################
+---
 
-# 🔐 OPTIONAL: INBOUND FILTERING
+### 7.2 Inbound Filtering
 
-#############################################
+# Accept only DR LAN network
 
 ip prefix-list REMOTE-LAN seq 5 permit 192.168.20.0/24
 
@@ -161,38 +163,40 @@ neighbor 100.1.1.2 route-map FILTER-IN in
 neighbor 100.1.2.2 route-map FILTER-IN in
 neighbor 100.1.3.2 route-map FILTER-IN in
 
-#############################################
+---
 
-# 🔍 VERIFICATION COMMANDS
+## 8. VERIFICATION COMMANDS
 
-#############################################
+---
 
-# show ip bgp summary
+show ip bgp summary
+show ip bgp
+show ip route
+show ip ospf neighbor
+show ip bgp neighbors
 
-# show ip bgp
+---
 
-# show ip route
+## 9. DESIGN NOTES
 
-# show ip ospf neighbor
+---
 
-# show ip bgp neighbors
+* OSPF is used for internal routing within HQ
+* BGP is used for external connectivity with ISPs
+* Redistribution ensures route visibility across domains
+* Local Preference influences outbound traffic selection
+* AS Path Prepending influences inbound traffic selection
+* Route filtering ensures controlled route advertisement
 
-#############################################
+---
 
-# ✅ NOTES
+## 10. KEY TAKEAWAYS
 
-#############################################
+---
 
-# - OSPF used for internal routing
+* Demonstrates multi-homing with three ISPs
+* Implements redundancy and failover
+* Uses BGP attributes for traffic engineering
+* Applies best practices for route control and filtering
 
-# - BGP used for external routing
-
-# - Redistribution ensures end-to-end reachability
-
-# - Local Preference controls outbound traffic
-
-# - AS Path Prepending controls inbound traffic
-
-# - Route filtering prevents unnecessary route advertisement
-
-#############################################
+############################################################
