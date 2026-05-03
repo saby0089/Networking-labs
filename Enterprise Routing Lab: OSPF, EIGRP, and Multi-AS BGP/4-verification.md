@@ -100,7 +100,7 @@ show ip route <next-hop-ip>
 ### 8. Advertised Routes (BGP)
 
 ```bash id="2j9k0h"
-show ip bgp neighbors <neighbor-ip> advertised-routes
+show ip bgp neighbors 209.165.204.2 advertised-routes
 ```
 
 **Expected**
@@ -113,7 +113,7 @@ show ip bgp neighbors <neighbor-ip> advertised-routes
 ### 9. Received Routes (BGP)
 
 ```bash id="d8f4m1"
-show ip bgp neighbors <neighbor-ip> received-routes
+show ip bgp neighbors 209.165.204.2 received-routes
 ```
 
 **Expected**
