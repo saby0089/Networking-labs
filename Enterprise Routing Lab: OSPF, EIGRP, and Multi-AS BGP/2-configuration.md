@@ -32,7 +32,22 @@ router ospf 1
 router eigrp 100
  redistribute ospf 1 metric 10000 100 255 1 1500
 ```
+#### Redistribution with Route Tagging (Loop Prevention)
 
+```
+route-map EIGRP-TO-OSPF permit 10
+ set tag 100
+
+router ospf 1
+ redistribute eigrp 100 subnets route-map EIGRP-TO-OSPF
+route-map OSPF-TO-EIGRP deny 10
+ match tag 100
+
+route-map OSPF-TO-EIGRP permit 20
+
+router eigrp 100
+ redistribute ospf 1 metric 10000 100 255 1 1500 route-map OSPF-TO-EIGRP
+```
 ---
 
 ### 2. EDGE Router (eBGP)
