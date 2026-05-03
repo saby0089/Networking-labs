@@ -40,9 +40,9 @@ route-map EIGRP-TO-OSPF permit 10
 
 router ospf 1
  redistribute eigrp 100 subnets route-map EIGRP-TO-OSPF
+
 route-map OSPF-TO-EIGRP deny 10
  match tag 100
-
 route-map OSPF-TO-EIGRP permit 20
 
 router eigrp 100
