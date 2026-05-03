@@ -1,5 +1,5 @@
 ## Overview
-![Topology].(topology.png)
+![Topology](topology.png)
 
 ### Project Scope
 
