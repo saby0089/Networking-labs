@@ -54,14 +54,14 @@ router bgp 65000
 ### 3. ISP1 / ISP2 (eBGP + Default Route)
 
 ```
-router bgp <ASN>
- neighbor <EDGE-IP> remote-as 65000
+router bgp 65001
+ neighbor 209.165.200.2 remote-as 65000
 ```
 
 #### Default Route
 
 ```
-ip route 0.0.0.0 0.0.0.0 <next-hop-to-ISP3>
+ip route 0.0.0.0 0.0.0.0 209.165.202.2
 ```
 
 ---
