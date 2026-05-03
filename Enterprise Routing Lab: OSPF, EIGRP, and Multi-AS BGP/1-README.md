@@ -37,15 +37,15 @@
 ---
 
 ### Key Implementations
-
 * Multi-area OSPF design
 * EIGRP branch integration
 * Bidirectional route redistribution
+* Route tagging during redistribution to prevent routing loops
 * Dual-homed BGP edge
 * Loopback-based iBGP sessions
 * Static routing for loopback reachability
 * Default route propagation from ISP
-* BGP network-based route advertisement
+* Controlled BGP route advertisement using network statements
 * Prefix-list based route filtering
 
 ---
@@ -55,6 +55,7 @@
 * BGP session states (Idle / Active / Established)
 * Next-hop resolution and reachability
 * BGP table vs Routing table behavior
+* Loop prevention using route tagging
 * Route propagation across AS boundaries
 * End-to-end forwarding validation
 
