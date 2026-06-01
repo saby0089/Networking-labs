@@ -1,1 +1,29 @@
 
+=================================================
+MikroTik RouterOS SNMP Configuration
+=================================================
+
+Purpose:
+Enable SNMP monitoring from Zabbix Server.
+
+Configuration:
+
+/snmp set enabled=yes
+/snmp community set [find default=yes] name=public
+
+Verification:
+
+/snmp print
+
+From Zabbix Server:
+
+snmpwalk -v2c -c public 192.168.122.56 1.3.6.1.2.1.1
+
+Expected Result:
+SNMP OIDs successfully returned.
+
+Troubleshooting:
+
+- Verified SNMP service is enabled
+- Verified community string matches Zabbix configuration
+- Verified network connectivity between Zabbix and MikroTik
