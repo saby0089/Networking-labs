@@ -30,7 +30,7 @@ The lab was built entirely in GNS3 using virtualized infrastructure components t
 | Monitoring Platform | Zabbix 7.x    |
 | Operating System    | Ubuntu Server |
 | Database            | MariaDB       |
-| Web Server          | Apache        |
+| Web Server          | Nginx         |
 
 ---
 
