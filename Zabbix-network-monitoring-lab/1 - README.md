@@ -131,39 +131,39 @@ Implemented monitoring of web services hosted within the lab.
 
 ## Zabbix Dashboard
 
-![Dashboard](3%20-%20screenshots/1-%20zabbix-dashboard.png)
+![Dashboard](3%20-%20screenshots/1%20-%20zabbix-dashboard.png)
 
 ## MikroTik SNMP Monitoring
 
-![MikroTik](3%20-%20screenshots/2-%20mikrotik-snmp-monitoring.png)
+![MikroTik](3%20-%20screenshots/2%20-%20mikrotik-snmp-monitoring.png)
 
 ## Cisco SNMP Monitoring
 
-![Cisco](3%20-%20screenshots/3-%20cisco-snmp-monitoring.png)
+![Cisco](3%20-%20screenshots/3%20-%20cisco-snmp-monitoring.png)
 
 ## Custom Administrative Scripts
 
-![Scripts](3%20-%20screenshots/4-%20custom-scripts.png)
+![Scripts](3%20-%20screenshots/4%20-%20custom-scripts.png)
 
 ## Network Map Actions
 
-![Network Map](3%20-%20screenshots/5-%20network-map-actions.png)
+![Network Map](3%20-%20screenshots/5%20-%20network-map-actions.png)
 
 ## Email Alerting
 
-![Email Alerts](3%20-%20screenshots/6-%20email-alerts.png)
+![Email Alerts](3%20-%20screenshots/6%20-%20email-alerts.png)
 
 ## PSK Encryption
 
-![PSK](3%20-%20screenshots/7-%20psk-encryption.png)
+![PSK](3%20-%20screenshots/7%20-%20psk-encryption.png)
 
 ## Active Agent Monitoring
 
-![Active Agent](3%20-%20screenshots/8-%20active-agent.png)
+![Active Agent](3%20-%20screenshots/8%20-%20active-agent.png)
 
 ## Passive Agent Monitoring
 
-![Passive Agent](3%20-%20screenshots/9-%20passive-agent.png)
+![Passive Agent](3%20-%20screenshots/9%20-%20passive-agent.png)
 
 ---
 
