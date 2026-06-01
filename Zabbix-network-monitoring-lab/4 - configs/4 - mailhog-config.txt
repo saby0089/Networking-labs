@@ -1,1 +1,26 @@
+=================================================
+MailHog Email Alert Testing Configuration
+=================================================
 
+Purpose:
+Provide local SMTP service for Zabbix alert testing.
+
+Service:
+
+MailHog
+
+SMTP Port:
+1025
+
+Web Interface:
+8025
+
+Verification:
+
+http://192.168.122.191:8025
+
+Expected Result:
+Email alerts received in MailHog inbox.
+
+Use Case:
+Testing trigger actions and notifications without a production SMTP server.
