@@ -6,226 +6,201 @@
 
 # 📌 Project Overview
 
-This project demonstrates the deployment and operation of a centralized monitoring solution using **Zabbix 7.x**.
+This project demonstrates the deployment and operation of a centralized enterprise monitoring platform using **Zabbix 7.0.26**.
 
-The objective was to build a monitoring platform capable of monitoring Linux servers, Windows endpoints, Cisco devices, and MikroTik routers using a combination of:
+The objective was to build a monitoring environment capable of monitoring servers, workstations, network devices, services, and applications while implementing security, alerting, and administrative automation features commonly found in production environments.
 
-* Zabbix Agents
-* SNMP Monitoring
-* PSK Encryption
-* Email Alerting
-* Network Maps
-* Custom Administrative Scripts
-
-The lab was built entirely in GNS3 using virtualized infrastructure components to simulate a real-world enterprise monitoring environment.
+The entire lab was built in **GNS3** using virtualized infrastructure components to simulate a real-world enterprise monitoring deployment.
 
 ---
 
 # 🏗️ Lab Architecture
 
-## Monitoring Server
+## Monitoring Infrastructure
 
-| Component           | Technology    |
-| ------------------- | ------------- |
-| Monitoring Platform | Zabbix 7.x    |
-| Operating System    | Ubuntu Server |
-| Database            | MariaDB       |
-| Web Server          | Nginx         |
-
----
-
-## Monitored Devices
-
-| Device            | Monitoring Method     |
-| ----------------- | --------------------- |
-| Ubuntu Server     | Zabbix Agent (Active) |
-| Windows 10        | Zabbix Agent          |
-| Cisco Switch      | SNMPv2                |
-| MikroTik RouterOS | SNMPv2                |
+| Component             | Purpose                         |
+| --------------------- | ------------------------------- |
+| Zabbix Server         | Centralized monitoring platform |
+| Ubuntu Linux          | Active Agent Monitoring         |
+| Windows 10            | Passive Agent Monitoring        |
+| MikroTik RouterOS CHR | SNMP Monitoring                 |
+| Cisco Switch          | SNMP Monitoring                 |
+| Nginx Web Server      | Service Monitoring              |
+| MailHog               | Email Alert Testing             |
 
 ---
 
-# 🚀 Features Implemented
+# ⚙️ Technologies Implemented
 
-## Agent Monitoring
+## Zabbix Monitoring
 
-✔ Linux Passive Agent
-
-✔ Linux Active Agent
-
-✔ Windows Agent Monitoring
-
-✔ Agent Availability Monitoring
-
-✔ CPU Monitoring
-
-✔ Memory Monitoring
-
-✔ Disk Monitoring
-
-✔ Network Interface Monitoring
-
----
-
-## Secure Monitoring
-
-✔ PSK Encryption
-
-✔ Secure Agent Authentication
-
-✔ Encrypted Agent Communication
-
-✔ TLS Identity Configuration
+* Host Discovery
+* Agent-Based Monitoring
+* Active Agents
+* Passive Agents
+* Custom Monitoring Items
+* Trigger Creation
+* Event Management
+* Network Maps
+* Dashboard Customization
 
 ---
 
 ## SNMP Monitoring
 
-✔ Cisco Device Monitoring
+Implemented monitoring of network devices using SNMP.
 
-✔ MikroTik Router Monitoring
+### Monitored Devices
 
-✔ Interface Discovery
+* MikroTik RouterOS CHR
+* Cisco Switch
 
-✔ Performance Monitoring
+### Features
 
-✔ SNMP Validation using snmpwalk
-
----
-
-## Alerting
-
-✔ Trigger Configuration
-
-✔ User Media Configuration
-
-✔ MailHog Email Integration
-
-✔ Alert Testing
-
-✔ Problem Notifications
-
-✔ Recovery Notifications
+* Interface Monitoring
+* Availability Monitoring
+* Device Statistics Collection
+* Template-Based Monitoring
 
 ---
 
-## Automation and Administrative Scripts
+## Security
 
-✔ Ping Script
+Implemented encrypted communication between monitored hosts and the monitoring server.
 
-✔ Traceroute Script
+### Features
 
-✔ Operating System Detection (Nmap)
-
-✔ Memory Utilization Script
-
-✔ Network Map Actions
+* PSK (Pre-Shared Key) Encryption
+* Encrypted Agent Communication
+* Secure Host Authentication
 
 ---
 
-## Visualization
+## Alerting & Notifications
 
-✔ Custom Dashboards
+Implemented automated event notification workflows.
 
-✔ Network Maps
+### Features
 
-✔ Host Status Visualization
-
-✔ Interactive Actions
-
----
-
-# ⚙️ Configuration Sections
-
-Detailed implementation steps are documented in:
-
-| Section           | Description                            |
-| ----------------- | -------------------------------------- |
-| 5 - zabbix-agents | Active and Passive Agent Configuration |
-| 6 - security      | PSK Encryption Implementation          |
-| 7 - alerting      | MailHog Alerting Configuration         |
-| 4 - configs       | Configuration Backups                  |
-| 3 - screenshots   | Validation Screenshots                 |
+* Email Alerting
+* Trigger-Based Actions
+* User Media Configuration
+* Recovery Notifications
+* MailHog SMTP Integration
 
 ---
 
-# 🔍 Verification Performed
+## Administrative Automation
 
-The following validation tests were successfully completed:
+Created custom scripts accessible directly from the Zabbix interface.
 
-### Agent Monitoring
+### Custom Scripts
 
-* Verified Linux Agent connectivity
-* Verified Windows Agent connectivity
-* Confirmed Active Agent operation
-* Confirmed Passive Agent operation
+* Ping Test
+* Traceroute
+* Operating System Detection
+* Disk Space Verification
 
-### SNMP Monitoring
+---
 
-* SNMP Walk Verification
-* Cisco Monitoring Validation
-* MikroTik Monitoring Validation
+## Web Service Monitoring
 
-### Alerting
+Implemented monitoring of web services hosted within the lab.
 
-* Trigger Generation
-* Email Notification Delivery
+### Monitored Service
+
+* Nginx Web Server
+
+---
+
+# 🖥️ Software Versions
+
+| Component             | Version       |
+| --------------------- | ------------- |
+| Zabbix Server         | 7.0.26        |
+| Zabbix Agent          | 7.0.26        |
+| Ubuntu Linux          | 24.04 LTS     |
+| Windows               | Windows 10    |
+| MikroTik RouterOS CHR | 7.5           |
+| Nginx                 | Latest Stable |
+| MailHog               | Latest Stable |
+
+---
+
+# 📸 Project Screenshots
+
+## Zabbix Dashboard
+
+![Dashboard](3%20-%20screenshots/1-%20zabbix-dashboard.png)
+
+## MikroTik SNMP Monitoring
+
+![MikroTik](3%20-%20screenshots/2-%20mikrotik-snmp-monitoring.png)
+
+## Cisco SNMP Monitoring
+
+![Cisco](3%20-%20screenshots/3-%20cisco-snmp-monitoring.png)
+
+## Custom Administrative Scripts
+
+![Scripts](3%20-%20screenshots/4-%20custom-scripts.png)
+
+## Network Map Actions
+
+![Network Map](3%20-%20screenshots/5-%20network-map-actions.png)
+
+## Email Alerting
+
+![Email Alerts](3%20-%20screenshots/6-%20email-alerts.png)
+
+## PSK Encryption
+
+![PSK](3%20-%20screenshots/7-%20psk-encryption.png)
+
+## Active Agent Monitoring
+
+![Active Agent](3%20-%20screenshots/8-%20active-agent.png)
+
+## Passive Agent Monitoring
+
+![Passive Agent](3%20-%20screenshots/9-%20passive-agent.png)
+
+---
+
+# 🔍 Validation Performed
+
+The following tests were successfully completed:
+
+* Agent Connectivity Verification
+* SNMP Polling Validation
+* PSK Encryption Validation
+* Trigger Generation Testing
+* Email Alert Testing
 * Recovery Notification Testing
-
-### Administrative Scripts
-
-* Ping Execution
-* Traceroute Execution
-* Nmap OS Detection
-* Memory Usage Verification
-
----
-
-# 🛠️ Challenges Encountered
-
-During implementation several issues were identified and resolved:
-
-* Zabbix Agent communication failures
-* PSK authentication mismatches
-* SNMP monitoring issues
-* Missing Nmap dependency
-* Missing Traceroute dependency
-* Script execution permission errors
-* Host onboarding issues
-* Manual action execution failures
+* Custom Script Execution
+* Network Map Actions
+* Web Service Monitoring
 
 ---
 
 # 📚 Key Skills Demonstrated
 
-### Monitoring
-
+* Network Monitoring
 * Zabbix Administration
-* Agent Deployment
-* Active Monitoring
-* Passive Monitoring
-
-### Networking
-
-* SNMP
-* ICMP
-* TCP/IP
-* Network Device Monitoring
-
-### Security
-
-* PSK Encryption
-* TLS Authentication
-* Secure Monitoring
-
-### Linux Administration
-
-* Ubuntu Server
-* Service Management
-* Package Management
+* Linux Administration
+* SNMP Monitoring
+* Alert Management
+* Infrastructure Security
 * Troubleshooting
+* Service Monitoring
+* Network Visibility
+* Monitoring Automation
 
 ---
+
+# 🎯 Outcome
+
+This lab demonstrates the deployment of a secure enterprise monitoring solution capable of monitoring servers, endpoints, network devices, and services while providing centralized visibility, automated alerting, encrypted communications, and operational troubleshooting tools.
 
 # 🎯 Future Improvements
 
@@ -235,12 +210,7 @@ During implementation several issues were identified and resolved:
 * Zabbix Proxy
 * Grafana Integration
 * Advanced Trigger Logic
-
----
-
+  
 # 👨‍💻 Author
 
-**Sabyasachi Dasgupta**
-
-CCNA Certified | Network Monitoring | Zabbix | SNMP | Linux | Infrastructure Monitoring
-
+### Sabyasachi Dasgupta
