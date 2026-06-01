@@ -135,38 +135,6 @@ The lab was built entirely in GNS3 using virtualized infrastructure components t
 
 ---
 
-# 📸 Screenshots
-
-## Zabbix Dashboard
-
-![Dashboard](3%20-%20screenshots/1-%20zabbix-dashboard.png)
-
----
-
-## MikroTik Monitoring via SNMP
-
-![MikroTik](3%20-%20screenshots/2-%20mikrotik-snmp-monitoring.png)
-
----
-
-## Cisco Device Monitoring
-
-![Cisco](3%20-%20screenshots/3-%20cisco-snmp-monitoring.png)
-
----
-
-## Custom Administrative Scripts
-
-![Scripts](3%20-%20screenshots/4-%20custom-scripts.png)
-
----
-
-## Interactive Network Map
-
-![NetworkMap](3%20-%20screenshots/5-%20network-map-actions.png)
-
----
-
 # ⚙️ Configuration Sections
 
 Detailed implementation steps are documented in:
