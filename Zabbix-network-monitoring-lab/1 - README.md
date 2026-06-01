@@ -1,6 +1,6 @@
 # Zabbix Network Monitoring Lab
 
-![Topology](topology.png)
+![Topology](2%20-%20topology/topology.png)
 
 ---
 
