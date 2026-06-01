@@ -1,1 +1,32 @@
+=================================================
+Zabbix Trigger and Action Configuration
+=================================================
 
+Purpose:
+Generate alerts when monitored services fail.
+
+Trigger Example:
+
+Host unavailable
+
+Expression:
+
+max(/host/agent.ping,5m)=0
+
+Action:
+
+Send Email Notification
+
+Media Type:
+
+Email (MailHog)
+
+Verification:
+
+1. Stop monitored service
+2. Trigger changes to PROBLEM state
+3. Email received in MailHog
+4. Recovery email generated when service restored
+
+Expected Result:
+Automated alert lifecycle demonstrated.
