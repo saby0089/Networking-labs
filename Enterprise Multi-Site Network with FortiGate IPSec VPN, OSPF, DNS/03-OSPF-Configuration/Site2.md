@@ -71,9 +71,9 @@ Successful verification confirmed:
 
 # 📷 Verification Screenshots
 
-Insert:
-
 - Neighbor Table
+  ![Screenshots](../Images/router-site2-neighbor.png)  ![Screenshots](../Images/l3-site2-neighbor.png)
+  
 - Routing Table
 - Interface Status
 - Successful Ping Tests
