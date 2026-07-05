@@ -75,9 +75,14 @@ Successful verification confirmed:
   ![Screenshots](../Images/router-site2-neighbor.png)  ![Screenshots](../Images/l3-site2-neighbor.png)
   
 - Routing Table
+  ![Screenshots](../Images/router-site2-ospf.png)  ![Screenshots](../Images/l3-site2-ospf.png)
+  
 - Interface Status
+  ![Screenshots](../Images/router-site2-ospf-interface.png)
+  
 - Successful Ping Tests
-
+  ![Screenshots](../Images/site2-ospf-ping.png)   ![Screenshots](../Images/site2-pc-ospf-ping.png)
+  
 ---
 
 # 📖 Notes
