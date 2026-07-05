@@ -19,7 +19,7 @@ The FortiGate firewalls maintain static routes for all remote enterprise network
 
 Traffic matching these routes is forwarded through the IPSec tunnel instead of the Internet.
 
-```
+---
 
 Singapore Site
 
