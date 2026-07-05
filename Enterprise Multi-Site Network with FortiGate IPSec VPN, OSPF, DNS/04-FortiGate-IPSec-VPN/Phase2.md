@@ -1,4 +1,4 @@
-<img width="1846" height="632" alt="image" src="https://github.com/user-attachments/assets/c5bc6d47-4b86-42fb-a677-90d49c1fd793" /># 🔒 IPSec VPN Phase 2 Configuration
+🔒 IPSec VPN Phase 2 Configuration
 
 ---
 
