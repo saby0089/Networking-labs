@@ -75,6 +75,7 @@ The following tasks were completed:
 
 - Singapore FortiGate Phase 1
   ![Screenshot](../Images/Forti1-phase1.png)
+  
 - India FortiGate Phase 1
   ![Screenshot](../Images/Forti2-phase1.png)
 
@@ -101,8 +102,10 @@ Successful verification confirmed:
 # 📷 Verification Screenshots
 
 - diagnose vpn ike gateway list
+  ![Screenshot](../Images/vpn-ike-list.png)
 
 - diagnose vpn tunnel list
+  ![Screenshot](../Images/vpn-tunnel-list.png)
 
 ---
 
