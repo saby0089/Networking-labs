@@ -11,10 +11,10 @@ A dedicated monitoring site hosts the Zabbix Server, providing centralized SNMP 
 
 ```
 
-> *(Insert your topology image here)*
+
 
 ```markdown
-![Enterprise Topology](Topology.png)
+![Topology](Topology.png)
 
 ---
 
