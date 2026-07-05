@@ -14,7 +14,6 @@ By redistributing static routes into OSPF, all internal routing devices dynamica
 
 # 🌐 Network Design
 
-```
 
 ```
 Singapore LAN
@@ -37,7 +36,6 @@ Redistribute into OSPF
 Cisco Routers learn Remote Networks
 ```
 
-```markdown
 ---
 
 # ❓ Why Route Redistribution Was Required
