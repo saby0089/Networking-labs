@@ -106,10 +106,11 @@ Configuration included:
 
 # 📷 Configuration Screenshots
 
-Insert screenshots:
-
 - Singapore Firewall Policies
+  ![Screesnhot](../Images/Forti1-policy.png)
+  
 - India Firewall Policies
+  ![Screesnhot](../Images/Forti2-policy.png)
 
 ---
 
@@ -126,13 +127,15 @@ Firewall policy verification included:
 
 # 📷 Verification Screenshots
 
-Insert:
-
 - Successful Ping Site1 → Site2
+  ![Screesnhot](../Images/Forti1-to-Forti2-ping.png)
+  
 - Successful Ping Site2 → Site1
+  ![Screesnhot](../Images/Forti2-to-Forti1-ping.png)
+  
 - Internet Connectivity
-- FortiGate Policy Hit Counters (Optional)
-
+  ![Screesnhot](../Images/Forti-internet.png)
+  
 ---
 
 # 📖 Notes
