@@ -1,4 +1,4 @@
-# 🔒 IPSec VPN Phase 2 Configuration
+<img width="1846" height="632" alt="image" src="https://github.com/user-attachments/assets/c5bc6d47-4b86-42fb-a677-90d49c1fd793" /># 🔒 IPSec VPN Phase 2 Configuration
 
 ---
 
@@ -56,11 +56,12 @@ The following tasks were completed:
 
 # 📷 Configuration Screenshots
 
-Insert:
-
 - Singapore FortiGate Phase 2 Configuration
+  ![Screenshot](../Images/Forti1-phase2.png)
+  
 - India FortiGate Phase 2 Configuration
-
+  ![Screenshot](../Images/Forti2-phase2.png)
+  
 ---
 
 # ✅ Verification
@@ -106,12 +107,12 @@ These counters confirmed that enterprise traffic was successfully encrypted befo
 
 # 📷 Verification Screenshots
 
-Insert:
-
 - diagnose vpn tunnel list
 - Encryption Counters
 - Tunnel Status
 - ESP Security Associations
+  ![Screenshot](../Images/vpn-tunnel-list.png)
+  ![Screenshot](../Images/vpn-tunnel-list2.png)
 
 ---
 
