@@ -74,7 +74,9 @@ The following tasks were completed:
 # 📷 Configuration Screenshots
 
 - Singapore FortiGate Phase 1
+  ![Screenshot](../Images/Forti1-phase1.png)
 - India FortiGate Phase 1
+  ![Screenshot](../Images/Forti2-phase1.png)
 
 ---
 
