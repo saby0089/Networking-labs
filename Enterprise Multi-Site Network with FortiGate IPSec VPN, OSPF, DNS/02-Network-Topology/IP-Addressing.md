@@ -11,9 +11,6 @@ A dedicated monitoring site hosts the Zabbix Server, providing centralized SNMP 
 
 ---
 
-
----
-
 # 🏢 Site Overview
 
 | Site | Purpose |
