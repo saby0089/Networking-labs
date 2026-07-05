@@ -9,12 +9,12 @@ The lab simulates a real-world enterprise consisting of two geographically separ
 
 A dedicated monitoring site hosts the Zabbix Server, providing centralized SNMP monitoring of both FortiGate firewalls.
 
-```
-
+---
 
 
 ```markdown
 ![Topology](Topology.png)
+```
 
 ---
 
