@@ -131,7 +131,7 @@ Firewall policy verification included:
   ![Screesnhot](../Images/Forti1-to-Forti2-ping.png)
   
 - Successful Ping Site2 → Site1
-  ![Screesnhot](../Images/Forti2-to-Forti1-ping.png)
+  ![Screesnhot](../Images/Forti2-to-Fort1-ping.png)
   
 - Internet Connectivity
   ![Screesnhot](../Images/Forti-internet.png)
