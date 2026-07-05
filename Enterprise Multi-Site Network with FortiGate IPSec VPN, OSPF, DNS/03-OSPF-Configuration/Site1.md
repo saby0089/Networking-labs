@@ -93,7 +93,7 @@ Verification confirmed:
   ![Screenshots](../Images/router-site1-ospf-interface.png)  ![Screenshots](../Images/router-site2-ospf-interface.png)
   
 - Successful End-to-End Ping
-  ![Screenshots](../Images/router-site1-ospf-ping.png)  ![Screenshots](../Images/router-site2-ospf-ping.png)  ![Screenshots](../Images/site1-pc-ospf-ping.png)  ![Screenshots](../Images/site2-pc-ospf-ping.png)
+  ![Screenshots](../Images/site1-ospf-ping.png)  ![Screenshots](../Images/site2-ospf-ping.png)  ![Screenshots](../Images/site1-pc-ospf-ping.png)  ![Screenshots](../Images/site2-pc-ospf-ping.png)
 
 ---
 
