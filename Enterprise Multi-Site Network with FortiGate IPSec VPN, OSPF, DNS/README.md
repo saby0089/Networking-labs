@@ -1,179 +1,174 @@
----
+# 🌐 Enterprise Multi-Site Network using FortiGate IPSec VPN, OSPF & Zabbix
 
-# 🌐 Enterprise Multi-Site Network Infrastructure using FortiGate, IPSec VPN, OSPF, Ubuntu Services & Zabbix Monitoring
-
----
-
-# Topology
-![Topology](topology.png)
+![FortiGate](https://img.shields.io/badge/FortiGate-Firewall-red)
+![Cisco](https://img.shields.io/badge/Cisco-IOS-blue)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-22.04-orange)
+![OSPF](https://img.shields.io/badge/Routing-OSPF-green)
+![IPSec](https://img.shields.io/badge/VPN-Route--Based-success)
+![Zabbix](https://img.shields.io/badge/Monitoring-Zabbix-brightgreen)
+![SNMP](https://img.shields.io/badge/Monitoring-SNMP-yellowgreen)
+![Status](https://img.shields.io/badge/Project-Completed-success)
 
 ---
 
 # 📌 Project Overview
 
-This project demonstrates the design, deployment, monitoring, and troubleshooting of a complete enterprise network consisting of two geographically separated branch offices connected through a **FortiGate Route-Based IPSec Site-to-Site VPN**.
+This project demonstrates the design, deployment, monitoring, verification, and troubleshooting of a complete **Enterprise Multi-Site Network** connecting two geographically separated offices using a **FortiGate Route-Based IPSec Site-to-Site VPN**.
 
-Each site provides dynamic routing using **OSPF**, local infrastructure services through **Ubuntu DHCP** and **BIND9 DNS**, secure communication over an encrypted IPSec tunnel, Internet connectivity via NAT, and centralized monitoring using **Zabbix**.
+The lab was built entirely in **GNS3** using Cisco routers, Layer-2 and Layer-3 switches, FortiGate firewalls, Ubuntu Linux servers, and a centralized Zabbix monitoring server.
 
-Unlike traditional networking labs that stop after configuration, this project focuses on the complete engineering lifecycle—from deployment and validation to troubleshooting and performance monitoring.
+The project combines routing, switching, security, Linux infrastructure services, Internet connectivity, and network monitoring into a single integrated enterprise environment.
 
-The entire environment was designed and implemented inside **GNS3** using virtualized Cisco routers, FortiGate firewalls, Ubuntu Linux servers, and a dedicated Zabbix monitoring platform to simulate a real-world enterprise branch network.
-
----
-
-# 🏗️ Lab Architecture
-
-## Enterprise Infrastructure
-
-| Component | Purpose |
-|-----------|----------|
-| Cisco Layer-3 Routers | Dynamic Routing (OSPF) |
-| FortiGate Firewalls | IPSec VPN & Firewall Policies |
-| Ubuntu Linux Server | DHCP Server |
-| Ubuntu Linux Server | BIND9 DNS Server |
-| Zabbix Server | Infrastructure Monitoring |
-| Client PCs | End User Simulation |
-| NAT Cloud | Internet Connectivity |
+Unlike traditional networking labs that focus only on configuration, this repository also documents the complete troubleshooting journey, including routing issues, VPN deployment, DNS troubleshooting, Linux networking, and monitoring implementation.
 
 ---
 
-## 🌍 Site 1
+# 🖼️ Enterprise Network Topology
 
-| Component | Function |
-|----------|----------|
-| Cisco Router | OSPF Routing |
-| FortiGate Firewall | VPN Gateway |
-| Ubuntu DHCP/DNS Server | Infrastructure Services |
-| PCs | Client Devices |
+<p align="center">
+    <img src="Images/topology.png" width="1000">
+</p>
 
 ---
 
-## 🌍 Site 2
+# 🚀 Project Features
 
-| Component | Function |
-|----------|----------|
-| Cisco Router | OSPF Routing |
-| FortiGate Firewall | VPN Gateway |
-| Ubuntu DHCP/DNS Server | Infrastructure Services |
-| PCs | Client Devices |
-
----
-
-## 📊 Monitoring Infrastructure
-
-The environment includes a dedicated **Zabbix Server** responsible for monitoring both FortiGate firewalls using SNMP.
-
-Current monitoring includes:
-
-- VPN Tunnel Status
-- CPU Utilization
-- Memory Usage
-- Interface Statistics
-- Firewall Health
-- Availability Monitoring
+- 🌍 Enterprise Multi-Site Network
+- 🔀 Layer-2 & Layer-3 Switching
+- 🌐 VLAN Segmentation & Inter-VLAN Routing
+- 🔄 OSPF Dynamic Routing
+- 🔒 FortiGate Route-Based IPSec VPN
+- 🛡️ Firewall Policies
+- 🛣️ Static Route Redistribution into OSPF
+- 🖥️ Ubuntu DHCP Server
+- 🌐 Ubuntu BIND9 DNS Server
+- 🌍 Internet Connectivity with NAT
+- 📊 Zabbix Infrastructure Monitoring
+- 📡 SNMP Monitoring
+- 📈 VPN Tunnel Monitoring
+- ✅ End-to-End Network Verification
+- 🔧 Real-World Troubleshooting Documentation
 
 ---
 
-# 🎯 Project Objectives
+# 🛠️ Technologies Used
 
-The primary objective of this project was to build a realistic enterprise branch-office network capable of demonstrating modern networking, security, infrastructure services, and monitoring technologies.
-
-Key objectives include:
-
-- Configure Dynamic Routing using OSPF
-- Deploy Route-Based IPSec VPN
-- Secure Inter-Site Communication
-- Configure DHCP Services
-- Configure BIND9 DNS
-- Implement Internet Access using NAT
-- Monitor Infrastructure using Zabbix
-- Validate End-to-End Connectivity
-- Perform Real-World Troubleshooting
-- Document Complete Deployment Process
-
----
-
-# 🚀 Technologies Used
-
-| Technology | Purpose |
-|------------|---------|
-| FortiGate VM | Firewall & IPSec VPN |
-| Cisco IOS | Enterprise Routing |
-| OSPF | Dynamic Routing |
-| IPSec | Secure Site-to-Site VPN |
-| Ubuntu Linux | Infrastructure Services |
-| BIND9 | DNS Server |
-| ISC DHCP | DHCP Server |
-| Zabbix 7 | Enterprise Monitoring |
-| SNMP | Network Monitoring |
-| NAT | Internet Access |
-| GNS3 | Network Emulation |
+| Category | Technology |
+|----------|------------|
+| Firewall | FortiGate |
+| Routing | Cisco IOS |
+| Switching | Cisco Layer-2 & Layer-3 Switches |
+| Routing Protocol | OSPF |
+| VPN | Route-Based IPSec VPN |
+| Operating System | Ubuntu Linux |
+| DHCP | ISC DHCP Server |
+| DNS | BIND9 |
+| Monitoring | Zabbix |
+| Network Management | SNMP |
+| Virtual Lab | GNS3 |
 
 ---
 
-# ⭐ Project Features
+# 📂 Repository Structure
 
-✅ Enterprise Dual-Site Network
+```text
+Enterprise-MultiSite-FortiGate-IPSec-VPN/
 
-✅ Dynamic Routing (OSPF)
-
-✅ Route-Based IPSec VPN
-
-✅ Route Redistribution
-
-✅ Ubuntu DHCP Server
-
-✅ Ubuntu BIND9 DNS Server
-
-✅ Internet Connectivity
-
-✅ NAT Configuration
-
-✅ DNS Forwarding
-
-✅ Secure Inter-Site Communication
-
-✅ Zabbix SNMP Monitoring
-
-✅ VPN Tunnel Monitoring
-
-✅ Infrastructure Health Monitoring
-
-✅ End-to-End Validation
-
-✅ Enterprise Troubleshooting
+├── README.md
+├── 01-Project-Overview
+├── 02-Network-Topology
+├── 03-OSPF-Configuration
+├── 04-FortiGate-IPSec-VPN
+├── 05-Route-Redistribution
+├── 06-DHCP-Server
+├── 07-DNS-Server
+├── 08-Internet-Access
+├── 09-Zabbix-Monitoring
+├── 10-Verification
+├── 11-Troubleshooting
+└── Images
+```
 
 ---
 
-# 💼 Skills Demonstrated
+# 📖 Documentation
 
-This project demonstrates practical experience in:
+| Section | Description |
+|----------|-------------|
+| 📌 Project Overview | Enterprise design and objectives |
+| 🏗️ Network Topology | Architecture and IP addressing |
+| 🔄 OSPF Configuration | Dynamic routing deployment |
+| 🔒 FortiGate IPSec VPN | Phase 1, Phase 2, Firewall Policies, Static Routes |
+| 🔁 Route Redistribution | Static routes redistributed into OSPF |
+| 🖥️ DHCP Server | Ubuntu ISC DHCP configuration |
+| 🌐 DNS Server | Ubuntu BIND9 configuration |
+| 🌍 Internet Access | NAT and Internet connectivity |
+| 📊 Zabbix Monitoring | SNMP and VPN monitoring |
+| ✅ Verification | End-to-end validation |
+| 🔧 Troubleshooting | VPN, Routing, DNS, Linux & Zabbix |
 
-- Enterprise Routing
-- OSPF Design
-- IPSec VPN Deployment
-- FortiGate Administration
-- Firewall Policy Configuration
-- Linux Administration
-- DHCP Configuration
-- DNS Configuration
+---
+
+# 🎯 Skills Demonstrated
+
+This project demonstrates practical experience with:
+
+- Enterprise Network Design
+- Layer-2 Switching
+- Layer-3 Switching
+- VLAN Design
+- Inter-VLAN Routing
+- OSPF
+- Route Redistribution
+- FortiGate Firewall Administration
+- Route-Based IPSec VPN
+- Firewall Policies
 - NAT
+- Ubuntu Linux Administration
+- DHCP
+- BIND9 DNS
 - SNMP
 - Zabbix Monitoring
 - Network Troubleshooting
-- Root Cause Analysis
 - Technical Documentation
 
 ---
 
-# 📖 Why This Project?
+# 📊 Project Validation
 
-Most networking labs focus only on successful configuration.
+The completed environment successfully demonstrates:
 
-This repository intentionally documents the complete engineering journey, including configuration, validation, troubleshooting, and final optimization.
-
-Throughout the implementation, multiple real-world networking issues involving routing, VPN connectivity, DNS resolution, Linux services, Internet access, and monitoring were investigated and resolved using structured troubleshooting techniques.
-
-This makes the project representative of day-to-day enterprise network engineering rather than a simple configuration exercise.
+| Component | Status |
+|-----------|--------|
+| OSPF Routing | ✅ |
+| Inter-VLAN Routing | ✅ |
+| IPSec VPN | ✅ |
+| Static Routes | ✅ |
+| Route Redistribution | ✅ |
+| DHCP | ✅ |
+| DNS | ✅ |
+| Internet Connectivity | ✅ |
+| NAT | ✅ |
+| SNMP Monitoring | ✅ |
+| VPN Monitoring | ✅ |
+| End-to-End Connectivity | ✅ |
 
 ---
+
+# 💡 Key Learning
+
+This project reinforced the importance of integrating routing, security, Linux infrastructure services, and monitoring within a single enterprise environment.
+
+Beyond deployment, the project emphasized systematic troubleshooting, demonstrating how routing, VPN, DNS, Linux services, and monitoring interact to deliver reliable end-to-end connectivity.
+
+---
+
+# 👨‍💻 Author
+
+**Sabyasachi Dasgupta**
+
+Networking | Network Security | FortiGate | Cisco | Linux | Zabbix | Automation Enthusiast
+
+---
+
+⭐ If you found this project useful, feel free to explore the documentation and provide feedback.
