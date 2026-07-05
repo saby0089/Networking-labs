@@ -83,9 +83,8 @@ Verification confirmed:
 
 # 📷 Verification Screenshots
 
-Insert screenshots here:
-
 - OSPF Neighbor Table
+  ![Screenshots](../Images/router-site1-neighbor.png)  ![Screenshots](../Images/router-site2-neighbor.png)  ![Screenshots](../Images/l3-site1-neighbor.png)  ![Screenshots](../Images/l3-site2-neighbor.png)
 - OSPF Routing Table
 - OSPF Interfaces
 - Successful End-to-End Ping
