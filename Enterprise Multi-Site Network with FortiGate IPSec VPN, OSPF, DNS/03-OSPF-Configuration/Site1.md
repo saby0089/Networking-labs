@@ -88,8 +88,12 @@ Verification confirmed:
   
 - OSPF Routing Table
   ![Screenshots](../Images/router-site1-ospf.png)  ![Screenshots](../Images/router-site2-ospf.png)  ![Screenshots](../Images/l3-site1-ospf.png)  ![Screenshots](../Images/l3-site2-ospf.png)
+  
 - OSPF Interfaces
+  ![Screenshots](../Images/router-site1-ospf-interface.png)  ![Screenshots](../Images/router-site2-ospf-interface.png)
+  
 - Successful End-to-End Ping
+  ![Screenshots](../Images/router-site1-ospf-ping.png)  ![Screenshots](../Images/router-site2-ospf-ping.png)  ![Screenshots](../Images/site1-pc-ospf-ping.png)  ![Screenshots](../Images/site2-pc-ospf-ping.png)
 
 ---
 
