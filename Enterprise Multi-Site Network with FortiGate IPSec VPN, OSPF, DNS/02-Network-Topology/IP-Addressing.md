@@ -11,6 +11,11 @@ A dedicated monitoring site hosts the Zabbix Server, providing centralized SNMP 
 
 ---
 
+# Topology
+![Topology](topology.png)
+
+---
+
 # 🏢 Site Overview
 
 | Site | Purpose |
